@@ -3,9 +3,7 @@ const app = express();
 const port = 8000;
 const path = require('path');
 const sequelize = require('./utils/sequelize');
-const Product = require('./models/Product');
-const Category = require('./models/Category');
-const Tag = require('./models/Tag');
+
 
 app.use(express.urlencoded({ extended: false }));
 
