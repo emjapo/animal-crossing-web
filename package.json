@@ -1,0 +1,31 @@
+{
+  "name": "project-emjapo",
+  "version": "1.0.0",
+  "description": "a lite text based version of Animal Crossing for the web",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winthropuniversity-besmer/project-emjapo.git"
+  },
+  "author": "Emily Port",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/winthropuniversity-besmer/project-emjapo/issues"
+  },
+  "homepage": "https://github.com/winthropuniversity-besmer/project-emjapo#readme",
+  "dependencies": {
+    "connect-session-sequelize": "^6.1.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.1.0",
+    "pug": "^2.0.4",
+    "sequelize": "^4.42.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
