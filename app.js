@@ -43,9 +43,9 @@ app.set('view engine', 'pug');
 
 app.use('/', IndexRouter);
 app.use('/', AnimalRouter);
-app.use('/', MuseumRouter);
-app.use('/', NooksRouter);
-app.use('/', PocketRouter);
+app.use('/museum', MuseumRouter);
+app.use('/nooksCranny', NooksRouter);
+app.use('/pocket', PocketRouter);
 
 sequelize.authenticate()
     .then(() => {
