@@ -30,4 +30,4 @@ const Item = sequelize.define('item', {
 Villager.belongsToMany(Item, {through : 'Pockets'});
 Item.belongsToMany(Villager, {through : 'Pockets'});
 
-module.exports = House;
+module.exports = Item;

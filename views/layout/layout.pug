@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    block title
+    link(rel="stylesheet" type="text/css" href="/css/styles.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+    script(src="/javascripts/index.js" type="text/javascript")
+    block javascript
+  body
+    block content
+    footer
+        block footer
+        ul(class="nav") 
+            li 
+                a(href="/pockets") View Pockets
+            li 
+                a(href="/nooksCranny") Go to Nooks Cranny
+            li 
+                a(href="/museum") Go to Museum
+            li 
+                a(href="/river") Go Fishing
+            li 
+                a(href="/garden") Go Bug Hunting
+        p(class="time") #{new Date().getHours()} : #{new Date().getMinutes()}
+        p #{new Date().getFullYear()}

@@ -23,4 +23,4 @@ const Villager = sequelize.define('villager', {
 });
 
 
-module.exports = House;
+module.exports = Villager;

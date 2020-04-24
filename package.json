@@ -23,7 +23,8 @@
     "express-session": "^1.17.1",
     "mysql2": "^2.1.0",
     "pug": "^2.0.4",
-    "sequelize": "^4.42.0"
+    "sequelize": "^4.42.0",
+    "sqlite3": "^4.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
