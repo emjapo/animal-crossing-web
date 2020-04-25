@@ -6,24 +6,33 @@ const Villager = require('./models/Villager');
 const Item = require('./models/Item');
 const House = require('./models/House');
 
-//need to add check for sign-in
 
 //displays pockets
 router.get('/', (req, res) => {
-    Villager.findByPk(req.session.user)
-    .then((villager) => {
-        villager.getItems()
-        .then((items)=>{
-            res.render('/pocket/index', {items : items});
+    if (req.session.user) {
+        Villager.findByPk(req.session.user)
+        .then((villager) => {
+            villager.getItems()
+            .then((items)=>{
+                res.render('/pocket/index', {items : items});
+            })
         })
-    })
-    .catch((err) => {
-        console.log("did not find page", err);
-    })
+        .catch((err) => {
+            console.log("did not find page", err);
+        })
+    }
+    else {
+        res.redirect('/login');
+    }
 });
 
 router.get('/full', (req, res) => {
-    res.render('pocket/full');
+    if (req.session.user) {
+        res.render('pocket/full');
+    }
+    else {
+        res.redirect('/login');
+    }
 });
 
 module.exports = router;
