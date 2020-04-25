@@ -18,7 +18,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store)
 
 app.use(express.urlencoded({ extended: false }));
 
-var sequelize = new Sequelize(
+var sequel = new Sequelize(
     "database",
     "username",
     "password", {
@@ -29,7 +29,7 @@ var sequelize = new Sequelize(
 app.use(session({
     secret: "BaSwanA274bdxE",
     store: new SequelizeStore({
-        db : sequelize
+        db : sequel
     }),
     resave: false,
     saveUninitialized: false
