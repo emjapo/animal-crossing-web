@@ -8,13 +8,13 @@ const House = require('./models/House');
 
 //counts items in pocket and displays the appropiate page
 router.post('/add', (req, res) => {
-    req.session.pageC = req.session.pageCount + 1 || 1;
-    req.session.articleCount = req.session.articleCount + 1 || 1;
-    if (req.session.articleCount == 4) {
-        res.redirect('/subscribe');
+    req.session.pocketCount = req.session.pocketCount + 1 || 1;
+    if (req.session.pocketCount == 10) {
+        res.redirect('/pocket/full');
     }
     else {
-        const id = req.params.id;
+        //get item from form and add to pocket
+
         Article.findByPk(id)
             .then((article) => {
                 res.render('article', { article: article });
@@ -27,5 +27,18 @@ router.post('/add', (req, res) => {
 
 //displays pockets
 router.get('/', (req, res) => {
+    Villager.findByPk(req.session.user)
+    .then((villager) => {
+        villager.getItems()
+        .then((items)=>{
+            res.render('/pocket/index', {items : items});
+        })
+    })
+    .catch((err) => {
+        console.log("did not find page", err);
+    })
+});
 
+router.get('/full', (req, res) => {
+    res.render('pocket/full');
 })

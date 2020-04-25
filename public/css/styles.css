@@ -17,3 +17,11 @@ footer {
 .outside {
     /* use gradient to make a sky background */
 }
+
+.medium {
+    width: 400px;
+}
+
+.small {
+    width : 200px;
+}
