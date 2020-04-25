@@ -1,0 +1,12 @@
+extends layout/layout.pug
+
+block content 
+    h1 Animal Crossing Lite
+    p A text-based version of the popular Nintendo game.
+    form(method="POST" action="/login")
+        label Username:
+            input(type="text" name="username")
+        label Password:
+            input(type="password" name="password")
+        input(type="submit" value="Login")
+    a(href="/newAccount") New? Create an account

@@ -18,6 +18,8 @@ const bug3 = Item.build({ name: "Tarantula", image: "images/bug.png", price: "80
 const bug4 = Item.build({ name: "Ladybug", image: "images/bug.png", price: "200", canDonate: "1" });
 const bug5 = Item.build({ name: "Honeybee", image: "images/bug.png", price: "200", canDonate: "1" });
 
+//need to add check for sign-in
+
 router.get('/river', (req, res) => {
     res.render('river');
 });
@@ -171,3 +173,5 @@ router.post('/garden', (req, res) => {
         res.redirect('/');
     }
 });
+
+module.exports = router;
