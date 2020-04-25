@@ -10,7 +10,7 @@ const Item = sequelize.define('item', {
         allowNull: false
     },
     name: {
-        type: sequelize.String,
+        type: Sequelize.String,
         allowNull: false
     },
     image: {
