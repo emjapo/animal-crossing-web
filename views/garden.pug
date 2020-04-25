@@ -1,1 +1,10 @@
 extends layout/layout.pug
+
+block div
+        div(class="content outside")
+        
+block content
+    h1 Let's go bug hunting!
+    p Click the button to catch bugs
+    form(method="POST" action="/garden")
+        button(type="submit") Bug Hunt

@@ -1,1 +1,22 @@
 extends layout/layout.pug
+
+block div
+        div(class="content outside")
+
+block content
+    h1 Welcome #{villager.name} to your island!
+    img(src="/images/island.svg" class="large center")
+    a(href="/river" class="float")
+        img(src="images/fish.png" class="medium")
+    a(href="/nooksCranny" class="float")
+        img(src="images/tom-nook.png" class="medium")
+    a(href="/museum" class="float")
+        img(src="images/blathers.png" class="medium")
+    a(href="/garden" class="float")
+        img(src="images/bug.png" class="medium")
+    br
+    div(class="home")
+        img(src=villager.image, alt="villagers icon" class="center medium")
+        p #{villager.name} has #{villager.money} bells.
+        img(src=house.image class="center medium")
+        p #{villager.name} owes #{house.price} bells. This debt can be paid at Nook's Cranny.

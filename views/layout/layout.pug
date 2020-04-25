@@ -2,25 +2,29 @@ doctype html
 html
   head
     block title
+    <link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
     link(rel="stylesheet" type="text/css" href="/css/styles.css")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
     script(src="/javascripts/index.js" type="text/javascript")
     block javascript
   body
-    div(class="content")
+    block div
+        div(class="content")
+    a(href="/logout")
+        img(src="images/sunset.svg" class="small right")
     block content
     footer
         block footer
-        ul(class="nav") 
-            li 
-                a(href="/pockets") View Pockets
-            li 
-                a(href="/nooksCranny") Go to Nooks Cranny
-            li 
-                a(href="/museum") Go to Museum
-            li 
-                a(href="/river") Go Fishing
-            li 
-                a(href="/garden") Go Bug Hunting
-        p(class="time") #{new Date().getHours()} : #{new Date().getMinutes()}
-        p #{new Date().getFullYear()}
+            ul(class="nav") 
+                li 
+                    a(href="/pockets") View Pockets
+                li 
+                    a(href="/nooksCranny") Go to Nooks Cranny
+                li 
+                    a(href="/museum") Go to Museum
+                li 
+                    a(href="/river") Go Fishing
+                li 
+                    a(href="/garden") Go Bug Hunting
+            p(class="time") #{new Date().getHours()} : #{new Date().getMinutes()}
+            p #{new Date().getFullYear()}

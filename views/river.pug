@@ -1,1 +1,10 @@
 extends layout/layout.pug
+
+block div
+        div(class="content outside")
+
+block content
+    h1 Time to go fishing!
+    p Click the button to go fishing
+    form(method="POST" action="/river")
+        button(type="submit") Fish

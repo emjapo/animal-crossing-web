@@ -1,4 +1,11 @@
 body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+h1 {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+.content {
 
 }
 
@@ -16,12 +23,34 @@ footer {
 
 .outside {
     /* use gradient to make a sky background */
+    background-image: linear-gradient(#87CEEB, #C6DEE8)
 }
 
 .medium {
-    width: 400px;
+    width: 20%;
 }
 
 .small {
-    width : 200px;
+    width : 10%;
+}
+
+.large {
+    width: 80%;
+}
+
+.right {
+    margin-left: auto;
+}
+
+.float {
+    float: left;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home {
+    background-color: #D0F252;
 }
