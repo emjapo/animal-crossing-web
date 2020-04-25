@@ -6,8 +6,7 @@ const sequelize = require('./utils/sequelize');
 
 const IndexRouter = require('./routes/index.js');
 const AnimalRouter = require('./routes/animals.js');
-const MuseumRouter = require('./routes/museum.js');
-const NooksRouter = require('./routes/nooks.js');
+// const NooksRouter = require('./routes/nooks.js');
 const PocketRouter = require('./routes/pockets.js');
 
 const Villager = require('./models/Villager');
@@ -43,7 +42,7 @@ app.set('view engine', 'pug');
 
 app.use('/', IndexRouter);
 app.use('/', AnimalRouter);
-app.use('/museum', MuseumRouter);
+// app.use('/museum', MuseumRouter);
 app.use('/nooksCranny', NooksRouter);
 app.use('/pocket', PocketRouter);
 
