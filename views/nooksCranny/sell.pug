@@ -1,0 +1,13 @@
+extends ../layout/layout.pug
+
+block title
+    title Nook's Cranny - Selling
+    
+block content
+    h1 What do you want to sell?
+    p At this time, we can only buy one item at a time. Please select the item you want to sell and click sell.
+    form()
+        select(name="sold")
+            each item in items
+                option(value=item.id) #{item.name}
+        input(type="submit" value="Sell")        
