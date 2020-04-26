@@ -4,3 +4,12 @@ block title
     title Nook's Cranny - Paying
     
 block content
+    h1 Time to pay off your loan
+    p Choose the amount you want to pay. You cannot pay more than you have in your pockets.
+    p You have #{villager.money} bells.
+    p You owe #{house.price} bells.
+    form(method="POST")
+        div(class="slidecontainer")
+            input(type="range" min="1" max=villager.money value="50" class="slider" name="bells" id="Range")
+        p(id="bells")
+        input(type="submit" value="pay")

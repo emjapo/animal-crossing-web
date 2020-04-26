@@ -73,7 +73,26 @@ router.get('/pay', (req, res) => {
 });
 
 router.post('/pay', (req, res) => {
-
+    let bells = parseInt(req.body.bells);
+    let user = req.session.user;
+    Villager.findByPk(user)
+        .then((villager) => {
+            villager.getHouse()
+                .then((house) => {
+                    let value = house.price;
+                    villager.money = villager.money - bells;
+                    villager.save()
+                        .then(() => {
+                            house.price = house.price - bells;
+                            house.save()
+                                .then(() => {
+                                    res.redirect('/nooksCranny/');
+                                })
+                        })
+                })
+        }).catch((err) => {
+            console.log(err);
+        }) 
 });
 
 module.exports = router;
