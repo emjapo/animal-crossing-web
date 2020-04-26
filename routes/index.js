@@ -47,4 +47,25 @@ router.get('/newAccount', (req, res) => {
     res.render('newAccount');
 });
 
+router.post('/newAccount', (req, res) => {
+    Villager.create({
+        user: req.body.username,
+        password: req.body.password,
+        name: req.body.name,
+        image: req.body.image,
+        money: 0
+    }).then((villager) => {
+        House.create({
+            image: req.body.image,
+            price: 180000
+        }).then((house) => {
+            villager.setHouse(house);
+        })
+    }) .then(() => {
+        res.redirect('/login');
+    }).catch((err) => {
+        console.log('Error saving account', err);
+    });
+});
+
 module.exports = router;

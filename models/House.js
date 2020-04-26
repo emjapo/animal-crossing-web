@@ -11,7 +11,7 @@ const House = sequelize.define('house', {
     },
     color: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
     },
     image: {
         type: Sequelize.STRING,

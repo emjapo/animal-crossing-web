@@ -6,7 +6,8 @@ const Villager = sequelize.define('villager', {
     user: {
         type: Sequelize.STRING,
         primaryKey: true,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     password: {
         type: Sequelize.STRING,
