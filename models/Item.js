@@ -10,7 +10,7 @@ const Item = sequelize.define('item', {
         allowNull: false
     },
     name: {
-        type: Sequelize.String,
+        type: Sequelize.STRING,
         allowNull: false
     },
     image: {
@@ -22,7 +22,7 @@ const Item = sequelize.define('item', {
         allowNull: false
     },
     canDonate : {
-        type: sequelize.BOOLEAN,
+        type: Sequelize.BOOLEAN,
         allowNull: false
     }
 });

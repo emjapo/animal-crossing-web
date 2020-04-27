@@ -58,7 +58,7 @@ router.post('/newAccount', (req, res) => {
         money: 0
     }).then((villager) => {
         House.create({
-            image: req.body.image,
+            image: req.body.house,
             price: 180000
         }).then((house) => {
             villager.setHouse(house);
@@ -68,6 +68,11 @@ router.post('/newAccount', (req, res) => {
     }).catch((err) => {
         console.log('Error saving account', err);
     });
+});
+
+router.get('/logout', (req, res) => {
+    req.session.destroy();
+    res.redirect('/login');
 });
 
 module.exports = router;

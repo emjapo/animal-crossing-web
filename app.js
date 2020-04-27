@@ -2,12 +2,13 @@ const express = require('express');
 const app = express();
 const port = 8000;
 const path = require('path');
+const Sequelize = require('sequelize');
 const sequelize = require('./utils/sequelize');
 
 const IndexRouter = require('./routes/index.js');
 const AnimalRouter = require('./routes/animals.js');
-// const NooksRouter = require('./routes/nooks.js');
-const PocketRouter = require('./routes/pockets.js');
+const NooksRouter = require('./routes/nooks.js');
+const PocketRouter = require('./routes/pocket.js');
 
 const Villager = require('./models/Villager.js');
 const Item = require('./models/Item.js');
@@ -18,22 +19,35 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store)
 
 app.use(express.urlencoded({ extended: false }));
 
-var sequel = new Sequelize(
-    "database",
-    "username",
-    "password", {
-        "dialect": "sqlite",
-        "storage": "./session.sqlite"
-});
+// var sequel = new Sequelize(
+//     "database",
+//     "username",
+//     "password", {
+//         "dialect": "sqlite",
+//         "storage": "./session.sqlite"
+// });
 
+// app.use(session({
+//     secret: "BaSwanA274bdxE",
+//     store: new SequelizeStore({
+//         db : sequel
+//     }),
+//     resave: false,
+//     saveUninitialized: false
+// }));
+
+
+var myStore = new SequelizeStore({
+    db: sequelize
+})
 app.use(session({
-    secret: "BaSwanA274bdxE",
-    store: new SequelizeStore({
-        db : sequel
-    }),
+    secret: 'ansFEhnc12kd',
+    store: myStore,
     resave: false,
-    saveUninitialized: false
-}));
+    proxy: true
+}))
+
+myStore.sync();
 
 app.use('/', express.static('public'));
 

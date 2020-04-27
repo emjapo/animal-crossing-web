@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
         .then((villager) => {
             villager.getItems()
             .then((items)=>{
-                res.render('/pocket/index', {items : items});
+                res.render('pocket/index', {items : items});
             })
         })
         .catch((err) => {
