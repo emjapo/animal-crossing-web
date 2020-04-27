@@ -9,8 +9,8 @@ const AnimalRouter = require('./routes/animals.js');
 // const NooksRouter = require('./routes/nooks.js');
 const PocketRouter = require('./routes/pockets.js');
 
-const Villager = require('./models/Villager');
-const Item = require('./models/Item');
+const Villager = require('./models/Villager.js');
+const Item = require('./models/Item.js');
 const House = require('./models/House');
 
 const session = require('express-session');

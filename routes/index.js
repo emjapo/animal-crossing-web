@@ -14,7 +14,9 @@ router.get('/', (req, res) => {
             .then((house) => {
                 res.render('index', {villager : villager, house : house});
             })
-        })
+        }).catch((err) => {
+            console.log(err);
+        });
     }
     else {
         res.redirect('/login');
