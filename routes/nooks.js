@@ -46,6 +46,7 @@ router.post('/sell', (req, res) => {
             .then(() => {
                 item.destroy()
                 .then(() => {
+                    req.session.pocketCount = req.session.pocketCount - 1;
                     res.redirect('/nooksCranny/');
                 })
             })

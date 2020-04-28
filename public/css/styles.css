@@ -1,12 +1,38 @@
 body {
     font-family: 'M PLUS Rounded 1c', sans-serif;
+    padding:0px;
 }
 
 h1 {
     font-family: 'M PLUS Rounded 1c', sans-serif;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 3em;
 }
 .content {
-    align-content: center;
+    text-align: center;
+}
+p, form, a {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+form {
+    margin: 10px;
+}
+img {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.direct img {
+    display:inline;
+}
+.direct {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .nav {
@@ -53,7 +79,11 @@ footer {
 
 .home {
     background-color: #F28F79;
+    padding: 25px;
+    margin: 20px 0px;
+
 }
+
 
 .slidecontainer {
     width: 100%; /* Width of the outside container */
@@ -95,3 +125,36 @@ footer {
     background: #88A61C;
     cursor: pointer;
 }
+
+ul.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #56ACBF;
+}
+
+ul.nav li {
+  float: left;
+}
+
+ ul.nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: rgb(72, 142, 158);
+}
+div.links a {
+    display: block;
+  color: #56ACBF;
+  text-align: center;
+  padding: 0px 16px 20px;;
+  text-decoration: none;
+}
+

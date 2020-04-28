@@ -9,14 +9,16 @@ block div
 block content
     h1 Welcome #{villager.name} to your island!
     img(src="/images/island.svg" class="large center")
-    a(href="/river" class="float")
-        img(src="images/fish.png" class="medium")
-    a(href="/nooksCranny" class="float")
-        img(src="images/tom-nook.png" class="medium")
-    //- a(href="/museum" class="float")
-    //-     img(src="images/blathers.png" class="medium")
-    a(href="/garden" class="float")
-        img(src="images/bug.png" class="medium")
+    br
+    div(class="direct")
+        a(href="/river" )
+            img(src="images/fish.png" class="medium")
+        a(href="/nooksCranny" )
+            img(src="images/tom-nook.png" class="medium")
+        //- a(href="/museum" class="float")
+        //-     img(src="images/blathers.png" class="medium")
+        a(href="/garden" )
+            img(src="images/bug.png" class="medium")
     br
     div(class="home")
         img(src=villager.image, alt="villagers icon" class="center medium")
