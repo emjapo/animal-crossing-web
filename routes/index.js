@@ -24,7 +24,13 @@ router.get('/', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    res.render('login');
+    let error = undefined;
+    if (req.session.error)
+    {
+        error = req.session.error;
+        delete req.session.error;
+    }
+    res.render('login', {error : error});
 });
 
 router.post('/login', (req, res) => {
@@ -36,11 +42,12 @@ router.post('/login', (req, res) => {
             req.session.user = user;
             res.redirect('/');
         } else {
-            console.log("Wrong password");
+            req.session.error = "Wrong password";
             res.redirect('/login');
         }
     }).catch((err) => {
         console.log("user could not be found");
+        req.session.error = "Failed login, check username and password";
         res.redirect('/login');
     })
 });

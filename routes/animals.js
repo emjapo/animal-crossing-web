@@ -6,18 +6,6 @@ const Villager = require('../models/Villager');
 const Item = require('../models/Item');
 const House = require('../models/House');
 
-const fish1 = Item.build({ name: "Black Bass", image: "images/fish.png", price: "400", canDonate: "1"});
-const fish2 = Item.create({ name: "Guppy", image: "images/fish.png", price: "1300", canDonate: "1" });
-const fish3 = Item.build({ name: "Horse Mackerel", image: "images/fish.png", price: "150", canDonate: "1" });
-const fish4 = Item.build({ name: "Red Snapper", image: "images/fish.png", price: "3000", canDonate: "1" });
-const fish5 =Item.build({ name: "Carp", image: "images/fish.png", price: "300", canDonate: "1" });
-
-const bug1 = Item.build({ name: "Peacock Butterfly", image: "images/bug.png", price: "2500", canDonate: "1" });
-const bug2 = Item.build({ name: "Long Locust", image: "images/bug.png", price: "200", canDonate: "1" });
-const bug3 = Item.build({ name: "Tarantula", image: "images/bug.png", price: "8000", canDonate: "1" });
-const bug4 = Item.build({ name: "Ladybug", image: "images/bug.png", price: "200", canDonate: "1" });
-const bug5 = Item.build({ name: "Honeybee", image: "images/bug.png", price: "200", canDonate: "1" });
-
 
 router.get('/river', (req, res) => {
     if (req.session.user) {
@@ -40,7 +28,7 @@ router.post('/river', (req, res) => {
             case 1:
             case 2:
                 Villager.findByPk(req.session.user).then((villager) => {
-                    fish1.save()
+                    Item.create({ name: "Black Bass", image: "images/fish.png", price: "400", canDonate: "1" })
                         .then((fish) => {
                             villager.addItem([fish])
                         })
@@ -51,7 +39,7 @@ router.post('/river', (req, res) => {
                 break;
             case 3:
                 Villager.findByPk(req.session.user).then((villager) => {
-                    fish2.save()
+                    Item.create({ name: "Guppy", image: "images/fish.png", price: "1300", canDonate: "1" })
                         .then((fish) => {
                             villager.addItem([fish])
                         })
@@ -64,7 +52,7 @@ router.post('/river', (req, res) => {
             case 5:
             case 6:
                 Villager.findByPk(req.session.user).then((villager) => {
-                    fish3.save()
+                    Item.create({ name: "Horse Mackerel", image: "images/fish.png", price: "150", canDonate: "1" })
                         .then((fish) => {
                             villager.addItem([fish])
                         })
@@ -75,7 +63,7 @@ router.post('/river', (req, res) => {
                 break;
             case 7:
                 Villager.findByPk(req.session.user).then((villager) => {
-                    fish4.save()
+                    Item.create({ name: "Red Snapper", image: "images/fish.png", price: "3000", canDonate: "1" })
                         .then((fish) => {
                             villager.addItem([fish])
                         })
@@ -87,7 +75,7 @@ router.post('/river', (req, res) => {
             case 8:
             case 9:
                 Villager.findByPk(req.session.user).then((villager) => {
-                    fish5.save()
+                    Item.create({ name: "Carp", image: "images/fish.png", price: "300", canDonate: "1" })
                         .then((fish) => {
                             villager.addItem([fish])
                         })
@@ -97,7 +85,7 @@ router.post('/river', (req, res) => {
                     });
                 break;
         }
-        res.redirect('/');
+        res.redirect('/pocket');
     }
 });
 
@@ -120,7 +108,7 @@ router.post('/garden', (req, res) => {
         switch (randNum) {
             case 0:
                 Villager.findByPk(req.session.user).then((villager) => {
-                    bug1.save()
+                    Item.create({ name: "Peacock Butterfly", image: "images/bug.png", price: "2500", canDonate: "1" })
                         .then((bug) => {
                             villager.addItem([bug])
                         })
@@ -132,7 +120,7 @@ router.post('/garden', (req, res) => {
             case 1:
             case 2:
                 Villager.findByPk(req.session.user).then((villager) => {
-                    bug2.save()
+                    Item.create({ name: "Long Locust", image: "images/bug.png", price: "200", canDonate: "1" })
                         .then((bug) => {
                             villager.addItem([bug])
                         })
@@ -143,7 +131,7 @@ router.post('/garden', (req, res) => {
                 break;
             case 3:
                 Villager.findByPk(req.session.user).then((villager) => {
-                    bug3.save()
+                    Item.create({ name: "Tarantula", image: "images/bug.png", price: "8000", canDonate: "1" })
                         .then((bug) => {
                             villager.addItem([bug])
                         })
@@ -156,7 +144,7 @@ router.post('/garden', (req, res) => {
             case 5:
             case 6:
                 Villager.findByPk(req.session.user).then((villager) => {
-                    bug4.save()
+                    Item.create({ name: "Ladybug", image: "images/bug.png", price: "200", canDonate: "1" })
                         .then((bug) => {
                             villager.addItem([bug])
                         })
@@ -169,7 +157,7 @@ router.post('/garden', (req, res) => {
             case 8:
             case 9:
                 Villager.findByPk(req.session.user).then((villager) => {
-                    bug5.save()
+                    Item.create({ name: "Honeybee", image: "images/bug.png", price: "200", canDonate: "1" })
                         .then((bug) => {
                             villager.addItem([bug])
                         })
@@ -179,7 +167,7 @@ router.post('/garden', (req, res) => {
                     });
                 break;
         }
-        res.redirect('/');
+        res.redirect('/pocket');
     }
 });
 

@@ -8,4 +8,5 @@ $(document).ready(()=>{
         output.innerHTML = this.value;
     }
 
+
 });

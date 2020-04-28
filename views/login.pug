@@ -6,6 +6,9 @@ block title
 block content 
     h1 Animal Crossing Lite
     p A text-based version of the popular Nintendo game.
+    if error
+        div.error 
+            p #{error}
     form(method="POST" action="/login")
         label Username:
             input(type="text" name="username")
